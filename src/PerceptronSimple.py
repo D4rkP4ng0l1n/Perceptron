@@ -115,7 +115,7 @@ def analyser_convergence(X, y, learning_rates=[0.0001, 0.001, 0.01, 0.1, 1.0, 3.
         plt.grid(True, alpha=0.3)
         plt.show()
     
-
+'''
 p = PerceptronSimple()
 
 
@@ -149,3 +149,4 @@ visualiser_donnees(X, y, p.weights, p.bias)
 
 
 analyser_convergence(X, y)
+'''

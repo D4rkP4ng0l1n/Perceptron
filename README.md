@@ -67,5 +67,6 @@ Exercice 9 :
    L'approche "Un contre Tous" crée un déséquilibre car chaque perceptron est entraîné avec peu d'exemples positifs et beaucoup de négatifs, ce qui peut biaiser l'apprentissage à prédire "non", sauf si l'on compense ce déséquilibre par du suréchantillonnage, du sous-échantillonnage ou des pondérations.
 
 Concernant l'exercice 10, il ne me semble pas avoir vu de consignes, je n'ai pas compris ce que je devais réaliser pour cet exercice.
+Concernant l'exercice 11, honnêtement je n'ai pas compris non plus. J'ai essayé de générer un code avec Chat GPT mais je ne comprends pas comment ça fonctionne ni à quoi il sert et malgré l'aide de l'IA je n'arrive pas à comprendre.
 
 TP2 - Multi-layer Perceptron
