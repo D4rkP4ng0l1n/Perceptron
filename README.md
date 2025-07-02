@@ -114,3 +114,18 @@ Autrement dit :
 - Cela illustre surtout sa capacité expressive, même sans apprentissage optimal.
 
 Donc ici, "retrouver exactement les données d’entraînement" veut dire que le réseau peut mémoriser parfaitement les exemples vus
+
+Exercice 3.1 : Le programme que vous nous avez donné dans le TP était déjà complété ( La partie création et entrainement du réseau )
+
+1. Le réseau arrive-t-il à résoudre XOR ? Avec quelle architecture minimale ?
+   Oui, un réseau multicouche avec au moins une couche cachée non linéaire est capable de résoudre le problème non-linéairement séparable du XOR.
+   Avec une architecteure comprenant 2 neurones d'entrée, 1 couche cachée avec 2 neurones ( 2 neurones parce que les cas où la sortie = 1 du XOR ne peuvent pas être résolu avec un seul neurone caché), 1 neurone de sortie
+
+2. Comment le nombre de neurones cachés influence-t-il la convergence ?
+   2 neurones sont suffisant, mais la convergence parfois lente ou capricieuse. Avec 3 à 4 neurones la convergence est souvent plus rapide et plus stable, car on a plus de flexibilité dans l’approximation de la fonction cible et l’optimiseur a plus de "chemins" pour ajuster les poids.
+
+3. Que se passe-t-il avec plusieurs couches cachées ?
+   Lorsqu’on ajoute plusieurs couches cachées dans un réseau, comme dans une architecture du type [2, 2, 2, 1], le réseau devient plus profond. Cela permet, en théorie, de mieux modéliser des relations complexes entre les données. Cependant, pour un problème aussi simple que XOR, ce n’est pas nécessaire. Avoir plusieurs couches peut même ralentir la convergence, car l’apprentissage se fait à travers davantage de niveaux, ce qui complique la rétropropagation des gradients.
+
+4. L'initialisation des poids a-t-elle une influence ? (tester d'autres types d'initialisations)
+   Oui, une mauvaise initialisation peut entraîner la disparition ou l’explosion des gradients, empêchant l’apprentissage.
