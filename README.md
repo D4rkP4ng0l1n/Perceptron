@@ -70,3 +70,47 @@ Concernant l'exercice 10, il ne me semble pas avoir vu de consignes, je n'ai pas
 Concernant l'exercice 11, honnêtement je n'ai pas compris non plus. J'ai essayé de générer un code avec Chat GPT mais je ne comprends pas comment ça fonctionne ni à quoi il sert et malgré l'aide de l'IA je n'arrive pas à comprendre.
 
 TP2 - Multi-layer Perceptron
+
+Exercice 1.1 :
+
+1. Que signifie concrètement le théorème d'approximation universelle ?
+   Le théorème d’approximation universelle affirme qu’un réseau de neurones comportant au moins une couche cachée, avec un nombre suffisant de neurones et une fonction d’activation non-linéaire appropriée (comme la sigmoïde ou ReLU), peut approximer n’importe quelle fonction continue sur un intervalle fermé de ℝⁿ, aussi précisément qu’on le souhaite.
+   Concrètement, cela signifie que les réseaux multicouches sont mathématiquement capables de modéliser des relations complexes entre les entrées et les sorties, même si ces relations ne sont pas linéaires.
+
+2. Ce théorème garantit-il qu'on peut toujours trouver les bons poids ?
+   Non, le théorème n’assure pas que l’on trouvera effectivement les bons poids lors de l’apprentissage. Il garantit l’existence d’un jeu de poids capable d’approximer la fonction, pas qu'on saura l'atteindre avec un algorithme donné.
+
+Autrement dit, Il est théoriquement possible de modéliser n’importe quelle fonction continue. Mais en pratique, trouver ces poids dépend :
+
+- De l’algorithme d’entraînement (ex : rétropropagation),
+- De la qualité des données,
+- Du choix des hyperparamètres (nombre de couches, de neurones, taux d’apprentissage…),
+- Et de problèmes d’optimisation (minimums locaux, vanishing gradients…).
+
+3. Quelle est la différence entre "pouvoir approximer" et "pouvoir apprendre" ?
+
+- Pouvoir approximer : signifie qu’il existe un réseau avec certains poids capables de s'approcher autant qu'on veut de la fonction cible.
+- Pouvoir apprendre : signifie que l’algorithme d’apprentissage trouve effectivement ces poids à partir des données.
+  Donc, approximer est un résultat théorique, tandis qu’apprendre est une capacité pratique, qui dépend de l'entraînement, de l'optimisation, et des données disponibles.
+
+4. Pourquoi utilise-t-on souvent beaucoup plus de couches cachées en pratique ?
+   Même si le théorème affirme qu’une seule couche cachée suffit en théorie, on utilise en pratique des réseaux profonds (avec plusieurs couches) car :
+
+- Ils permettent une apprentissage plus efficace de représentations hiérarchiques des données (par exemple : formes → objets → scènes).
+- Une profondeur plus grande permet de réutiliser des motifs appris dans les couches précédentes.
+- Certains problèmes (vision, texte, son) sont mieux modélisés par une succession de transformations simples (comme les couches d’un réseau).
+
+  De plus, approcher une fonction complexe avec une seule couche nécessite beaucoup trop de neurones, ce qui est inefficace et augmente le risque de surapprentissage. Les réseaux profonds sont donc un compromis efficace entre complexité, généralisation, et puissance expressive.
+
+Exercice 1.2 - Expliquer la phrase suivante :
+Le théorème d’approximation universelle affirme qu’un réseau profond peut exactement retrouver les données d’entraînement.
+
+Le théorème d’approximation universelle dit que, pour un nombre fini de données, il est toujours possible (théoriquement) de trouver un réseau de neurones capable de reproduire exactement les sorties attendues à partir des entrées données, même sans généraliser.
+
+Autrement dit :
+
+- Si on donne au réseau les mêmes données d'entraînement, il peut les mémoriser et donner la bonne sortie à chaque fois.
+- Cela ne veut pas dire qu’il généralise bien à de nouvelles données.
+- Cela illustre surtout sa capacité expressive, même sans apprentissage optimal.
+
+Donc ici, "retrouver exactement les données d’entraînement" veut dire que le réseau peut mémoriser parfaitement les exemples vus

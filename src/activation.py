@@ -48,4 +48,4 @@ for name in ['heaviside', 'sigmoid', 'tanh', 'relu', 'leaky_relu']:
     plt.plot(z, d, label="Dérivée", color="blue")
     plt.title("Fonction " + name + " et sa dérivée")
     plt.legend()
-    plt.savefig('figures/' + name + '.png')
+    plt.savefig('../figures/' + name + '.png')
